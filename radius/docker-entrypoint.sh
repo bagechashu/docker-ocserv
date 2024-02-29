@@ -3,7 +3,7 @@
 if [ ! -f /etc/ocserv/certs/server-key.pem ] || [ ! -f /etc/ocserv/certs/server-cert.pem ]; then
 	# Check environment variables
 	if [ -z "$OCSERV_SERVER_NAME" ]; then
-		SRV_CN="www.example.com"
+		OCSERV_SERVER_NAME="www.example.com"
 	fi
 
 	# No certification found, generate one
@@ -39,10 +39,10 @@ iptables -t nat -A POSTROUTING -j MASQUERADE
 iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 
 #run nuttcp
-if test -x /usr/bin/nuttcp;then
-nuttcp -S
-fi
-iperf -s &
+# if test -x /usr/bin/nuttcp;then
+# nuttcp -S
+# fi
+# iperf -s &
 
 echo "Creating TUN device"
 mkdir -p /dev/net
