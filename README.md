@@ -19,6 +19,8 @@ docker pull nmav/ocserv
 
 Start an ocserv instance:
 
+**Note: must use --privileged**
+
 ```bash
 docker run --name ocserv --privileged -p 443:443 -p 443:443/udp -d tommylau/ocserv
 ```

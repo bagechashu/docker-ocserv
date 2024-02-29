@@ -18,4 +18,3 @@ ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 443
 EXPOSE 443/UDP
 CMD ["ocserv", "-c", "/etc/ocserv/ocserv.conf", "-f", "-d", "3"]
-
